@@ -1,0 +1,48 @@
+{
+    "mKeyValuesInfo": [
+        {
+            "mKey": "BG_Canvas",
+            "mValues": "Prefabs/BG_Canvas"
+        },
+        {
+            "mKey": "SecondPanel",
+            "mValues": "Prefabs/SecondPanel"
+        },
+        {
+            "mKey": "SecondPanelBg",
+            "mValues": "Prefabs/SecondPanelBg"
+        },
+        {
+            "mKey": "StartPanel",
+            "mValues": "Prefabs/StartPanel"
+        },
+        {
+            "mKey": "StartPanelBg",
+            "mValues": "Prefabs/StartPanelBg"
+        },
+        {
+            "mKey": "UICanvas",
+            "mValues": "Prefabs/UICanvas"
+        },
+        {
+            "mKey": "Canvas_Bg/Start_Bg_Panel/loading",
+            "mValues": "Textures/Canvas_Bg/Start_Bg_Panel/loading"
+        },
+        {
+            "mKey": "Canvas_Bg/Start_Bg_Panel/LOGO",
+            "mValues": "Textures/Canvas_Bg/Start_Bg_Panel/LOGO"
+        },
+        {
+            "mKey": "Canvas_Bg/Start_Bg_Panel/StartPanelBg",
+            "mValues": "Textures/Canvas_Bg/Start_Bg_Panel/StartPanelBg"
+        },
+        {
+            "mKey": "apply",
+            "mValues": "Data/apply"
+        },
+        {
+            "mKey": "item",
+            "mValues": "Data/item"
+        }
+    ]
+}

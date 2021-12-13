@@ -1,0 +1,39 @@
+ManifestFileVersion: 0
+CRC: 2279946650
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: prefabs/bg_canvas.bytes
+      Dependencies: {}
+    Info_1:
+      Name: prefabs/secondpanel.bytes
+      Dependencies: {}
+    Info_2:
+      Name: prefabs/secondpanelbg.bytes
+      Dependencies: {}
+    Info_3:
+      Name: prefabs/startpanel.bytes
+      Dependencies: {}
+    Info_4:
+      Name: prefabs/startpanelbg.bytes
+      Dependencies:
+        Dependency_0: textures/canvas_bg/start_bg_panel/loading.bytes
+        Dependency_1: textures/canvas_bg/start_bg_panel/logo.bytes
+    Info_5:
+      Name: prefabs/uicanvas.bytes
+      Dependencies: {}
+    Info_6:
+      Name: textures/canvas_bg/start_bg_panel/loading.bytes
+      Dependencies: {}
+    Info_7:
+      Name: textures/canvas_bg/start_bg_panel/logo.bytes
+      Dependencies: {}
+    Info_8:
+      Name: textures/canvas_bg/start_bg_panel/startpanelbg.bytes
+      Dependencies: {}
+    Info_9:
+      Name: data/apply.bytes
+      Dependencies: {}
+    Info_10:
+      Name: data/item.bytes
+      Dependencies: {}

@@ -1,0 +1,3 @@
+Table:Script/Test/Bin
+Byte:Resources/Bytes
+Pair:E:/LzcThirdCode/Assets/proto/Item.Proto---E:/LzcThirdCode/Assets/Excel/Item.xls|

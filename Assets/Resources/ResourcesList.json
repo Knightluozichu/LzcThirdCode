@@ -1,0 +1,48 @@
+{
+    "mKeyValuesInfo": [
+        {
+            "mKey": "BG_Canvas",
+            "mValues": "Prefabs/BG_Canvas.bytes"
+        },
+        {
+            "mKey": "SecondPanel",
+            "mValues": "Prefabs/SecondPanel.bytes"
+        },
+        {
+            "mKey": "SecondPanelBg",
+            "mValues": "Prefabs/SecondPanelBg.bytes"
+        },
+        {
+            "mKey": "StartPanel",
+            "mValues": "Prefabs/StartPanel.bytes"
+        },
+        {
+            "mKey": "StartPanelBg",
+            "mValues": "Prefabs/StartPanelBg.bytes"
+        },
+        {
+            "mKey": "UICanvas",
+            "mValues": "Prefabs/UICanvas.bytes"
+        },
+        {
+            "mKey": "Canvas_Bg/Start_Bg_Panel/loading",
+            "mValues": "Textures/Canvas_Bg/Start_Bg_Panel/loading.bytes"
+        },
+        {
+            "mKey": "Canvas_Bg/Start_Bg_Panel/LOGO",
+            "mValues": "Textures/Canvas_Bg/Start_Bg_Panel/LOGO.bytes"
+        },
+        {
+            "mKey": "Canvas_Bg/Start_Bg_Panel/StartPanelBg",
+            "mValues": "Textures/Canvas_Bg/Start_Bg_Panel/StartPanelBg.bytes"
+        },
+        {
+            "mKey": "apply",
+            "mValues": "Data/apply.bytes"
+        },
+        {
+            "mKey": "item",
+            "mValues": "Data/item.bytes"
+        }
+    ]
+}

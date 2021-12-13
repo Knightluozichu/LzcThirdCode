@@ -1,0 +1,100 @@
+{
+    "mKeyValuesInfo": [
+        {
+            "mKey": "a2ce9b5b36f4b4bd58656ada295e",
+            "mValues": "/StreamingAssets"
+        },
+        {
+            "mKey": "82c2c8ced4c7f1b7d5d064c8303ada93",
+            "mValues": "/StreamingAssets.manifest"
+        },
+        {
+            "mKey": "4c7cf26533a878cfdfefd6aa9ad29e5",
+            "mValues": "/data/apply.bytes"
+        },
+        {
+            "mKey": "f8be026fcf1d42edf73862a181abd2",
+            "mValues": "/data/apply.bytes.manifest"
+        },
+        {
+            "mKey": "c51f8b682dfb97285997d74f11127e35",
+            "mValues": "/data/item.bytes"
+        },
+        {
+            "mKey": "f65e1fac7fbc3452fb480868e5e69",
+            "mValues": "/data/item.bytes.manifest"
+        },
+        {
+            "mKey": "152d4611d19c849170f6a712c4a446fb",
+            "mValues": "/prefabs/bg_canvas.bytes"
+        },
+        {
+            "mKey": "c7f93368e30c6b586a7c9205d4e403a",
+            "mValues": "/prefabs/bg_canvas.bytes.manifest"
+        },
+        {
+            "mKey": "e2a816423fc4271165e08576ac14d",
+            "mValues": "/prefabs/secondpanel.bytes"
+        },
+        {
+            "mKey": "c9fca5639afa36e1aec25186b68c80aa",
+            "mValues": "/prefabs/secondpanel.bytes.manifest"
+        },
+        {
+            "mKey": "a2305762cbdf47b8beb9f2b4632eca",
+            "mValues": "/prefabs/secondpanelbg.bytes"
+        },
+        {
+            "mKey": "3270816db0063c1482a94f312c496b",
+            "mValues": "/prefabs/secondpanelbg.bytes.manifest"
+        },
+        {
+            "mKey": "f32b15311b2e1665e0e6835d93d6e166",
+            "mValues": "/prefabs/startpanel.bytes"
+        },
+        {
+            "mKey": "c187e6f2523f8129592958d21cdcc18",
+            "mValues": "/prefabs/startpanel.bytes.manifest"
+        },
+        {
+            "mKey": "1be2a9816f72a59b91e538e9591c132e",
+            "mValues": "/prefabs/startpanelbg.bytes"
+        },
+        {
+            "mKey": "40121bdbd6879698fcfcda112b13fc95",
+            "mValues": "/prefabs/startpanelbg.bytes.manifest"
+        },
+        {
+            "mKey": "1f975fb5c2a60b5f61e7837636f55",
+            "mValues": "/prefabs/uicanvas.bytes"
+        },
+        {
+            "mKey": "f45349d7b07bab55f07621408e9dbcf5",
+            "mValues": "/prefabs/uicanvas.bytes.manifest"
+        },
+        {
+            "mKey": "7e2554d376d85ab1cf0ed4911bb5eb7",
+            "mValues": "/textures/canvas_bg/start_bg_panel/loading.bytes"
+        },
+        {
+            "mKey": "c4c7b58f39d5a522792c5d82a06aba48",
+            "mValues": "/textures/canvas_bg/start_bg_panel/loading.bytes.manifest"
+        },
+        {
+            "mKey": "8cab5dcf472207ef5a6f066b2414025",
+            "mValues": "/textures/canvas_bg/start_bg_panel/logo.bytes"
+        },
+        {
+            "mKey": "c32c9c374b6f825be1a843989b6d9cc4",
+            "mValues": "/textures/canvas_bg/start_bg_panel/logo.bytes.manifest"
+        },
+        {
+            "mKey": "b6519485a18c889770c82181662731",
+            "mValues": "/textures/canvas_bg/start_bg_panel/startpanelbg.bytes"
+        },
+        {
+            "mKey": "23153065edee14d1bdefc9549b87c85b",
+            "mValues": "/textures/canvas_bg/start_bg_panel/startpanelbg.bytes.manifest"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+ManifestFileVersion: 0
+CRC: 1491732672
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f608630e9d5eaf642dbb4a1a2fc494e2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 6deebb140b3195d54bbdf0022a05f9d6
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Art/Prefabs/StartPanelBg.prefab
+Dependencies:
+- "E:/Project/Unity/\u7F57\u5B50\u521D\u5C0F\u6E38\u620F\u5C0F\u5C0F\u5E93/LzcThirdCode/Assets/StreamingAssets/textures/canvas_bg/start_bg_panel/loading.bytes"
+- "E:/Project/Unity/\u7F57\u5B50\u521D\u5C0F\u6E38\u620F\u5C0F\u5C0F\u5E93/LzcThirdCode/Assets/StreamingAssets/textures/canvas_bg/start_bg_panel/logo.bytes"

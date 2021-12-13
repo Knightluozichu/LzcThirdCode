@@ -1,0 +1,37 @@
+ManifestFileVersion: 0
+CRC: 4278613144
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f6049c5a42c3c79b357d7b0a547043a4
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 51df7c137262df6af23c2bc02c87664f
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 81
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 124
+  Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Art/Prefabs/UICanvas.prefab
+Dependencies: []

@@ -1,0 +1,12 @@
+package TABLE;
+
+message ITEM
+{
+	required string key = 1;
+	required string name = 2;
+}
+
+message ITEMARRAY
+{
+	repeated ITEM rows = 1;
+}

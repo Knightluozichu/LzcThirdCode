@@ -1,0 +1,126 @@
+﻿using Assets.Script.UI;
+using Assets.Script.Resources;
+using Assets.Script.Single;
+using Assets.Script.Notify;
+using System.Collections.Generic;
+using Assets.Script.Base;
+using System;
+using UnityEngine;
+using Assets.Script.Common;
+using Assets.Script.Scene;
+using Assets.Script.Map;
+using Assets.Script.Game;
+using Assets.Script.Data.Model;
+using Assets.Script.Animation;
+using Assets.Script.UI.Ctrl;
+
+/*
+ * @author LuoZichu
+ * @time 2019/7/1
+ */
+
+namespace Assets.Script
+{
+    /// <summary>
+    /// 外观模式 也是 消息中转中心
+    /// </summary>
+    public class GameFacade :Singleton<GameFacade>
+    {
+        #region Message relay encapsulation
+
+        Dictionary<string, SystemBase> mDic = new Dictionary<string, SystemBase>();
+
+        #endregion
+
+        private bool mIsAwake;
+
+        #region Method
+        #region Public
+        public void InitAwake()
+        {
+            mIsAwake = true;
+
+            mDic.Add(CommonClass.mSceneStateControllerName, SceneStateController.Instance);//启动
+            mDic.Add(CommonClass.mModelSystemName, ModelSystem.Instance);
+            mDic.Add(CommonClass.mUISystemName, UISystem.Instance);
+            mDic.Add(CommonClass.mResourcesSystemName, ResourcesSystem.Instance);
+            mDic.Add(CommonClass.mGameMapSystemName, GameMapSystem.Instance);
+            mDic.Add(CommonClass.mGameSystemName, GameSystem.Instance);
+            mDic.Add(CommonClass.mAnimationSystemName, AnimationSystem.Instance);
+            mDic.Add(CommonClass.mAudioSystemName, Audio.AudioSystem.Instance);
+            mDic.Add(CommonClass.mUICtrlSystemName, UICtrlSystem.Instance);
+
+            ResourcesSystem.Instance.Init();
+            UISystem.Instance.Init();
+            Audio.AudioSystem.Instance.InitAwake();
+            AnimationSystem.Instance.AnimationInit();
+            
+            GameMapSystem.Instance.GameInit();
+            ModelSystem.Instance.ModelInit();
+            
+        }
+
+        public void Init()
+        {
+           if(!mIsAwake)
+            {
+                InitAwake();
+            }
+        }
+
+        public void End()
+        {
+            ModelSystem.Instance.ModelEnd();
+            AnimationSystem.Instance.AnimationEnd();
+
+        }
+
+        public void Update()
+        {
+            AnimationSystem.Instance.AnimationUpdate();
+        }
+
+        public void OpenUI(string uibase)
+        {
+            UISystem.Instance.OpenUIFrom(uibase);
+        }
+
+        public void CloseUI(string _UIName)
+        {
+             UISystem.Instance.CloseUIFrom(_UIName);
+        }
+
+        /// <summary>
+        /// 消息中转
+        /// </summary>
+        /// <param name="_Area"></param>
+        /// <param name="_EventMa"></param>
+        /// <param name="_Message"></param>
+        public void SendMsg(string _Area,int _EventMa,object _Message = null)
+        {
+            if(!mDic.ContainsKey(_Area))
+            {
+               UnityEngine.Debug.Log("表驱动法中的表键不存在："+ _Area );
+            }
+            else
+            {
+                mDic[_Area].Excute(_EventMa, _Message);
+            }
+
+        }
+
+        public void SetTimeChange(int isPlay)
+        {
+            Time.timeScale = isPlay;
+        }
+        #endregion
+
+        #region Private
+
+
+
+        #endregion
+
+        #endregion
+    }
+}
