@@ -6,7 +6,7 @@ using UnityEngine;
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Resources
+namespace RedRedJiang.Unity
 {
     public abstract class IResources 
     {

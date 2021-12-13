@@ -8,7 +8,7 @@ using System.Text;
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Common
+namespace RedRedJiang.Unity
 {
     public static class CommonClass
     {
@@ -26,6 +26,7 @@ namespace Assets.Script.Common
         public static string mSecondPanelBgDefaultName = "SecondPanelBg";
 
         public const string mModelSystemName = "ModelSystem";
+        public const string mResourceVersionCheckSystemName = "ResourceVersionCheckSystem";
         public const string mSceneStateControllerName = "SceneStateController";
         public const string mUISystemName = "UISystem";
         public const string mResourcesSystemName = "ResourcesSystem";

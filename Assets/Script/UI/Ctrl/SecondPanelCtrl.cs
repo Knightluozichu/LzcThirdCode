@@ -1,7 +1,4 @@
-﻿using Assets.Script.Base;
-using Assets.Script.UI.Data;
-
-namespace Assets.Script.UI.Ctrl
+﻿namespace RedRedJiang.Unity
 {
     public class SecondPanelCtrl : UICtrlBase, IUICtrlBase
     {
@@ -23,7 +20,7 @@ namespace Assets.Script.UI.Ctrl
             if (mUIBaseRef is SecondPanelView)
             {
                 SecondPanelView sp = mUIBaseRef as SecondPanelView;
-                sp.Btn_Switch.onClick.AddListener(() => { sp.Open(Common.CommonClass.mStartPanelName); sp.Close(); });
+                sp.Btn_Switch.onClick.AddListener(() => { sp.Open(CommonClass.mStartPanelName); sp.Close(); });
             }
         }
     }

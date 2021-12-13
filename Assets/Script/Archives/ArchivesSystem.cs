@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 
 
-namespace Assets.Script.Archives
+namespace RedRedJiang.Unity
 {
-    public class ArchivesSystem : Single.Singleton<ArchivesSystem>
+    public class ArchivesSystem : Singleton<ArchivesSystem>
     {
         private Dictionary<string, ArchivesObject> mDicArchivesOfNameMap;
         public Dictionary<string, ArchivesObject> DicArchivesOfNameMap

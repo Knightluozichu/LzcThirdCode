@@ -1,6 +1,4 @@
-﻿using Assets.Script.Common;
-using UnityEngine;
-using System;
+﻿using System;
 
 
 /*
@@ -8,14 +6,14 @@ using System;
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Monster
+namespace RedRedJiang.Unity
 {
     public class MonsterMoveState : MonsterFSMState
     {
  
         public MonsterMoveState(MonsterBase mMonsterObj, MonsterFSMSystem mFSMSystem) : base(mMonsterObj, mFSMSystem)
         {
-            mStateID = Enum.StateID.Run;
+            mStateID = StateID.Run;
         }
 
         public override void Act()

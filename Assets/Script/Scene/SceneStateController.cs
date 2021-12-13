@@ -1,35 +1,33 @@
-﻿using UnityEngine.SceneManagement;
-using UnityEngine;
-using Assets.Script.Base;
-using System;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
  * @author LuoZichu
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Scene
+namespace RedRedJiang.Unity
 {
-    public class SceneStateController :SystemBase
+    public class SceneStateController : SystemBase<SceneStateController>, ISystem
     {
         
-        private static SceneStateController _Instance;
-        public static SceneStateController Instance
-        {
-            get
-            {
-                if (_Instance == null)
-                {
-                    _Instance = Activator.CreateInstance<SceneStateController>();
-                }
+        //private static SceneStateController _Instance;
+        //public static SceneStateController Instance
+        //{
+        //    get
+        //    {
+        //        if (_Instance == null)
+        //        {
+        //            _Instance = Activator.CreateInstance<SceneStateController>();
+        //        }
 
-                return _Instance;
-            }
-        }
+        //        return _Instance;
+        //    }
+        //}
 
         public SceneStateController()
         {
-            mSystemName = Common.CommonClass.mSceneStateControllerName;
+            mSystemName = CommonClass.mSceneStateControllerName;
         }
 
         private AsyncOperation mAsyOp;

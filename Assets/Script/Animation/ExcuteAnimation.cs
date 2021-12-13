@@ -1,7 +1,5 @@
-﻿using Assets.Script.Base;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using Assets.Script.Enum;
-using System.Collections.Generic;
 using UnityEngine.UI;
 
 /*
@@ -9,7 +7,7 @@ using UnityEngine.UI;
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Animation
+namespace RedRedJiang.Unity
 {
     public class ExcuteAnimation : AnimationBase
     {
@@ -44,7 +42,7 @@ namespace Assets.Script.Animation
         public void AnimationInit()
         {
             Register((int)AnimationEventMa.Make_Aniamtion_Smple);
-            mDicEventDelegate.Add((int)AnimationEventMa.Make_Aniamtion_Smple, AddAnimation);
+            DicEventDelegate.Add((int)AnimationEventMa.Make_Aniamtion_Smple, AddAnimation);
         }
 
         public void AnimationUpdate()

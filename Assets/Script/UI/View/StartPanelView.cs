@@ -1,21 +1,11 @@
-﻿using Assets.Script.Base;
-using UnityEngine;
-using Assets.Script.Tool;
-using UnityEngine.UI;
-using Assets.Script.Game;
-using Assets.Script.Enum;
-using Assets.Script.Data;
-using Assets.Script.Data.Model;
-using Assets.Script.Audio;
-using Assets.Script.UI.Ctrl;
-using Assets.Script.UI.Data;
+﻿using UnityEngine.UI;
 
 /*
  * @author LuoZichu
  * @time 2019/7/1
  */
 
-namespace Assets.Script.UI
+namespace RedRedJiang.Unity
 {
     public class StartPanelView : UIBase
     {
@@ -42,9 +32,9 @@ namespace Assets.Script.UI
             mUICtrtlBaseRef = null;
             mUIDataBaseRef = null;
         }
-        public StartPanelView() : base(Common.CommonClass.mStartPanelName)
+        public StartPanelView() : base(CommonClass.mStartPanelName)
         {
-            mUIForm_Pos = Enum.UIFormPos.Normal;
+            mUIForm_Pos = UIFormPos.Normal;
         }
 
         public override void UIInit()

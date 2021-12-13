@@ -7,13 +7,13 @@ using System;
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Monster
+namespace RedRedJiang.Unity
 {
     public class MonsterDeadState : MonsterFSMState
     {
         public MonsterDeadState(MonsterBase mMonsterObj, MonsterFSMSystem mFSMSystem) : base(mMonsterObj, mFSMSystem)
         {
-            mStateID = Enum.StateID.Death;
+            mStateID = StateID.Death;
         }
 
         public override void Act()

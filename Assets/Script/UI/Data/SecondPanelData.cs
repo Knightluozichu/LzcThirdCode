@@ -1,6 +1,6 @@
 ﻿
 
-namespace Assets.Script.UI.Data
+namespace RedRedJiang.Unity
 {
     public class SecondPanelData : UIDataBase
     {

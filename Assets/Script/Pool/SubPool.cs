@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using Assets.Script.Resources;
 
 /*
  * @author LuoZichu
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Pool
+namespace RedRedJiang.Unity
 {
     public class SubPool
     {

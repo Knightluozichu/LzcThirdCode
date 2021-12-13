@@ -1,13 +1,11 @@
-﻿using Assets.Script.Scene;
-using UnityEngine;
-using Assets.Script.Log;
+﻿using UnityEngine;
 
 /*
  * @author LuoZichu
  * @time 2019/7/1
  */
 
-namespace Assets.Script
+namespace RedRedJiang.Unity
 {
     public class GameLoop : MonoBehaviour
     {

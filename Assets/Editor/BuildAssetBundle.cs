@@ -1,11 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEditor;
-using System.IO;
+﻿using RedRedJiang.Unity;
 using System.Collections.Generic;
-using System;
-using Assets.Script.Resources;
-using System.Threading.Tasks;
+using System.IO;
+using UnityEditor;
+using UnityEngine;
 
 public class BuildAssetBundle
 {

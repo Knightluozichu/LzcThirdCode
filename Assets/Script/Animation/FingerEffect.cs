@@ -1,17 +1,11 @@
-﻿using Assets.Script.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 /*
  * @author LuoZichu
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Animation
+namespace RedRedJiang.Unity
 {
     public class FingerEffect 
     {
@@ -22,10 +16,10 @@ namespace Assets.Script.Animation
         public Transform PopTrans { get { return mPopTrans = mPopTrans ?? UICanvas.Find("Pop"); } }
 
         private Transform mUICanvas;
-        public Transform UICanvas { get { return mUICanvas = mUICanvas ?? Tool.UITool.GetUICanvas().transform; } }
+        public Transform UICanvas { get { return mUICanvas = mUICanvas ?? UITool.GetUICanvas().transform; } }
 
         private Camera mUICamera;
-        public Camera UICamera { get { return mUICamera = mUICamera ?? Tool.UITool.FindChild<Camera>(UICanvas.gameObject, "UI_Camera"); } }
+        public Camera UICamera { get { return mUICamera = mUICamera ?? UITool.FindChild<Camera>(UICanvas.gameObject, "UI_Camera"); } }
         public void Update()
         {
            
@@ -44,7 +38,7 @@ namespace Assets.Script.Animation
         private void CreatePoint(Vector3 pos)
         {
 
-            GameObject point =  Tool.UnityTool.CreateGameObject("Img_PointFinger", PopTrans);
+            GameObject point =  UnityTool.CreateGameObject("Img_PointFinger", PopTrans);
 
             Vector3 worldpos;
 

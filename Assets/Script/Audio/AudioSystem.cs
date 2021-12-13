@@ -1,7 +1,4 @@
-﻿using Assets.Script.Base;
-using Assets.Script.UI;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 /*
@@ -9,29 +6,29 @@ using UnityEngine;
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Audio
+namespace RedRedJiang.Unity
 {
     /// <summary>
     /// 音源管理器
     /// 除BGM和BTN外 每个声音自身带音源和音乐片段 还有key
     /// </summary>
-    public class AudioSystem : SystemBase
+    public class AudioSystem : SystemBase<AudioSystem>, ISystem
     {
-        #region 单例
-        private static AudioSystem _Instance;
-        public static AudioSystem Instance
-        {
-            get
-            {
-                if (_Instance == null)
-                {
-                    _Instance = Activator.CreateInstance<AudioSystem>();
-                }
+        //#region 单例
+        //private static AudioSystem _Instance;
+        //public static AudioSystem Instance
+        //{
+        //    get
+        //    {
+        //        if (_Instance == null)
+        //        {
+        //            _Instance = Activator.CreateInstance<AudioSystem>();
+        //        }
 
-                return _Instance;
-            }
-        }
-        #endregion
+        //        return _Instance;
+        //    }
+        //}
+        //#endregion
 
         private const string mBGMAudioSourceName = "BGM";
         private const string mBtnAudioSourceName = "BTN";
@@ -79,12 +76,12 @@ namespace Assets.Script.Audio
         /// <returns></returns>
         private AudioClip ResAudioClip(string name)
         {
-            return Resources.ResourcesSystem.Instance.ResObj<AudioClip>(name, true);
+            return ResourcesSystem.Instance.ResObj<AudioClip>(name, true);
         }
 
         public AudioSystem()
         {
-            mSystemName = Common.CommonClass.mAudioSystemName;
+            mSystemName = CommonClass.mAudioSystemName;
         }
 
         public void InitAwake()

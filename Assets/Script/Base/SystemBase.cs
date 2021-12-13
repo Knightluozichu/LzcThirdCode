@@ -1,19 +1,20 @@
-﻿using System;
-using Assets.Script.Notify;
-using System.Collections.Generic;
-using Assets.Script.Single;
+﻿using System.Collections.Generic;
 
 /*
  * @author LuoZichu
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Base
+namespace RedRedJiang.Unity
 {
-    public class SystemBase : IBaseNotify
+    public class SystemBase<T> :Singleton<T>, IBaseNotify where T : SystemBase<T>
     {
         protected string mSystemName;
         public string SystemName { get { return mSystemName; } }
+
+        private Dictionary<int, DelExtueHandle> mDicEventDelegate = new Dictionary<int, DelExtueHandle>();
+        public Dictionary<int, DelExtueHandle> DicEventDelegate { get => mDicEventDelegate; set => mDicEventDelegate = value; }
+
         /// <summary>
         /// 缓存事件码关心的脚本集合
         /// </summary>
@@ -24,7 +25,7 @@ namespace Assets.Script.Base
         /// </summary>
         /// <param name="_evenMa">事件码</param>
         /// <param name="_Message">消息</param>
-        public override void Excute(int _evenMa, object _Message = null)
+        public void Excute(int _evenMa, object _Message = null)
         {
             //CheckDicEvent();
             List<IBaseNotify> mListBaseScript = null;
@@ -34,17 +35,17 @@ namespace Assets.Script.Base
 
                 if (mListBaseScript.Count < 1)
                 {
-                   UnityEngine.Debug.Log("这个事件码"+ _evenMa + "并没有绑定任何脚本");
+                    UnityEngine.Debug.Log("这个事件码" + _evenMa + "并没有绑定任何脚本");
                     mDicEvent.Remove(_evenMa);
                     return;
                 }
                 else
                 {
-                    for(int i = mListBaseScript.Count - 1; i >= 0 ; i--)
+                    for (int i = mListBaseScript.Count - 1; i >= 0; i--)
                     {
-                        if(mListBaseScript[i] != null)
+                        if (mListBaseScript[i] != null)
                         {
-                            mListBaseScript[i].Excute(_evenMa,_Message);
+                            mListBaseScript[i].Excute(_evenMa, _Message);
                         }
                         else
                         {
@@ -55,7 +56,7 @@ namespace Assets.Script.Base
             }
             else
             {
-               UnityEngine.Debug.Log("这个事件"+ _evenMa + "还没注册");
+                UnityEngine.Debug.Log("这个事件" + _evenMa + "还没注册");
                 return;
             }
 

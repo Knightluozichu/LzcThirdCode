@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Script.OBB
+namespace RedRedJiang.Unity
 {
     /// <summary>
     /// 自制 OBB 包围盒

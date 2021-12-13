@@ -1,30 +1,27 @@
-﻿using System;
-using Assets.Script.Base;
-
-/*
+﻿/*
  * @author LuoZichu
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Animation
+namespace RedRedJiang.Unity
 {
-    class AnimationSystem : SystemBase
+    class AnimationSystem : SystemBase<AnimationSystem>, ISystem
     {
-        #region Signle
-        private static AnimationSystem _Instance;
-        public static AnimationSystem Instance
-        {
-            get
-            {
-                if (_Instance == null)
-                {
-                    _Instance = Activator.CreateInstance<AnimationSystem>();
-                }
+        //#region Signle
+        //private static AnimationSystem _Instance;
+        //public static AnimationSystem Instance
+        //{
+        //    get
+        //    {
+        //        if (_Instance == null)
+        //        {
+        //            _Instance = Activator.CreateInstance<AnimationSystem>();
+        //        }
 
-                return _Instance;
-            }
-        }
-        #endregion
+        //        return _Instance;
+        //    }
+        //}
+        //#endregion
 
         #region Field
 

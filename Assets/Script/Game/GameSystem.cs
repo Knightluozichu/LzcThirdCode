@@ -1,35 +1,27 @@
-﻿using System.Collections.Generic;
-using Assets.Script.Audio;
-using Assets.Script.Base;
-using System;
-using UnityEngine;
-using Assets.Script.Monster;
-using Assets.Script.Common;
-
-/*
+﻿/*
  * @author LuoZichu
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Game
+namespace RedRedJiang.Unity
 {
-    public class GameSystem : SystemBase
+    public class GameSystem : SystemBase<GameSystem>, ISystem
     {
-        #region 单例
-        private static GameSystem _Instance;
-        public static GameSystem Instance
-        {
-            get
-            {
-                if (_Instance == null)
-                {
-                    _Instance = Activator.CreateInstance<GameSystem>();
-                }
+        //#region 单例
+        //private static GameSystem _Instance;
+        //public static GameSystem Instance
+        //{
+        //    get
+        //    {
+        //        if (_Instance == null)
+        //        {
+        //            _Instance = Activator.CreateInstance<GameSystem>();
+        //        }
 
-                return _Instance;
-            }
-        }
-        #endregion
+        //        return _Instance;
+        //    }
+        //}
+        //#endregion
 
         #region Field
 
@@ -41,7 +33,7 @@ namespace Assets.Script.Game
 
         public GameSystem()
         {
-            mSystemName = Common.CommonClass.mGameSystemName;
+            mSystemName = CommonClass.mGameSystemName;
 
         }
 

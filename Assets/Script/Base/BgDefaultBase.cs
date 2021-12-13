@@ -1,22 +1,19 @@
-﻿
-using Assets.Script.Notify;
-using Assets.Script.UI.BgDefault;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Script.Base
+namespace RedRedJiang.Unity
 {
     public class BgDefaultBase : IBaseNotify
     {
         #region Excute
 
-        public override void Excute(int _evenMa, object _Message = null)
+        public  void Excute(int _evenMa, object _Message = null)
         {
-            if (mDicEventDelegate.Count > 0)
+            if (DicEventDelegate.Count > 0)
             {
-                if (mDicEventDelegate.ContainsKey(_evenMa))
+                if (DicEventDelegate.ContainsKey(_evenMa))
                 {
-                    mDicEventDelegate[_evenMa](_Message);
+                    DicEventDelegate[_evenMa](_Message);
                 }
                 else
                 {
@@ -68,6 +65,11 @@ namespace Assets.Script.Base
         protected GameObject mGoj_Bg_Panel;
         public GameObject Goj_Bg_Panel { get { return mGoj_Bg_Panel; } set { mGoj_Bg_Panel = value; } }
         public string BgDefaultPanelName { get { return mBgDefaultPanelName; } }
+
+        private Dictionary<int, DelExtueHandle> mDicEventDelegate = new Dictionary<int, DelExtueHandle>();
+        public Dictionary<int, DelExtueHandle> DicEventDelegate { get => mDicEventDelegate; set => mDicEventDelegate = value; }
+
+
         public BgDefaultBase(string mBgDefaultPanelName)
         {
             this.mBgDefaultPanelName = mBgDefaultPanelName;

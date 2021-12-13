@@ -1,34 +1,22 @@
-﻿using Assets.Script.UI;
-using Assets.Script.Resources;
-using Assets.Script.Single;
-using Assets.Script.Notify;
-using System.Collections.Generic;
-using Assets.Script.Base;
-using System;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using Assets.Script.Common;
-using Assets.Script.Scene;
-using Assets.Script.Map;
-using Assets.Script.Game;
-using Assets.Script.Data.Model;
-using Assets.Script.Animation;
-using Assets.Script.UI.Ctrl;
+
 
 /*
  * @author LuoZichu
  * @time 2019/7/1
  */
 
-namespace Assets.Script
+namespace RedRedJiang.Unity
 {
     /// <summary>
     /// 外观模式 也是 消息中转中心
     /// </summary>
-    public class GameFacade :Singleton<GameFacade>
+    public class GameFacade :Singleton<GameFacade> 
     {
         #region Message relay encapsulation
 
-        Dictionary<string, SystemBase> mDic = new Dictionary<string, SystemBase>();
+        Dictionary<string, IBaseNotify> mDic = new Dictionary<string, IBaseNotify>();
 
         #endregion
 
@@ -39,20 +27,21 @@ namespace Assets.Script
         public void InitAwake()
         {
             mIsAwake = true;
-
-            mDic.Add(CommonClass.mSceneStateControllerName, SceneStateController.Instance);//启动
+            //ResourceVersionCheckSystem
+            mDic.Add(CommonClass.mResourceVersionCheckSystemName, ResourceVersionCheckSystem.Instance);
+            mDic.Add(CommonClass.mSceneStateControllerName, SceneStateController.Instance);
             mDic.Add(CommonClass.mModelSystemName, ModelSystem.Instance);
             mDic.Add(CommonClass.mUISystemName, UISystem.Instance);
             mDic.Add(CommonClass.mResourcesSystemName, ResourcesSystem.Instance);
             mDic.Add(CommonClass.mGameMapSystemName, GameMapSystem.Instance);
             mDic.Add(CommonClass.mGameSystemName, GameSystem.Instance);
             mDic.Add(CommonClass.mAnimationSystemName, AnimationSystem.Instance);
-            mDic.Add(CommonClass.mAudioSystemName, Audio.AudioSystem.Instance);
+            mDic.Add(CommonClass.mAudioSystemName, AudioSystem.Instance);
             mDic.Add(CommonClass.mUICtrlSystemName, UICtrlSystem.Instance);
 
             ResourcesSystem.Instance.Init();
             UISystem.Instance.Init();
-            Audio.AudioSystem.Instance.InitAwake();
+            AudioSystem.Instance.InitAwake();
             AnimationSystem.Instance.AnimationInit();
             
             GameMapSystem.Instance.GameInit();

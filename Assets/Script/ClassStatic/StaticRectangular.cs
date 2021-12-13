@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
-using Assets.Script.Enum;
 
 /*
  * @author LuoZichu
  * @time 2019/7/1
  */
 
-namespace Assets.Script.ClassStatic
+namespace RedRedJiang.Unity
 {
     public static class StaticRectangular
     {

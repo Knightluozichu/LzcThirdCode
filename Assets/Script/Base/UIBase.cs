@@ -1,33 +1,26 @@
 ﻿using System;
-using Assets.Script.Notify;
 using System.Collections.Generic;
-using Assets.Script.UI;
-using Assets.Script.Enum;
 using UnityEngine;
-using Assets.Script.Tool;
 using UnityEngine.UI;
-using Assets.Script.Audio;
-using Assets.Script.UI.Ctrl;
-using Assets.Script.UI.Data;
 
 /*
  * @author LuoZichu
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Base
+namespace RedRedJiang.Unity
 {
     public class UIBase : IBaseNotify
     {
         #region Excute
 
-        public override void Excute(int _evenMa, object _Message = null)
+        public  void Excute(int _evenMa, object _Message = null)
         {
-            if (mDicEventDelegate.Count > 0)
+            if (DicEventDelegate.Count > 0)
             {
-                if (mDicEventDelegate.ContainsKey(_evenMa))
+                if (DicEventDelegate.ContainsKey(_evenMa))
                 {
-                    mDicEventDelegate[_evenMa](_Message);
+                    DicEventDelegate[_evenMa](_Message);
                 }
                 else
                 {
@@ -93,6 +86,10 @@ namespace Assets.Script.Base
         private GameObject mGojPanel;
         public GameObject GojPanel { get { return mGojPanel; } set { mGojPanel = value; } }
 
+        private Dictionary<int, DelExtueHandle> mDicEventDelegate = new Dictionary<int, DelExtueHandle>();
+        public Dictionary<int, DelExtueHandle> DicEventDelegate { get => mDicEventDelegate; set => mDicEventDelegate = value; }
+
+
         public void ShowUIForm(string name,GameObject Gob = null)
         {
             switch(UIForm_Pos)
@@ -112,7 +109,7 @@ namespace Assets.Script.Base
 
         private void NormalShowUIFrom(string name)
         {
-            UI.BgDefault.BgDefaultSystem.Instance.Open_Bg_Trans_Default(name + "Bg");
+            BgDefaultSystem.Instance.Open_Bg_Trans_Default(name + "Bg");
         }
 
         private void ReversalShowUIFrom()
@@ -121,29 +118,29 @@ namespace Assets.Script.Base
             GojPanel.transform.localScale = Vector3.zero;
 
             SendMsg(
-                Common.CommonClass.mAnimationSystemName,
-                (int)Enum.AnimationEventMa.Make_Aniamtion_Smple,
-                new Animation.AnimationInfo(0.2f, GojPanel.transform, AnimationXState.ScaleTo,
-                new Animation.AnimationFloat(0, 1.2f),
+                CommonClass.mAnimationSystemName,
+                (int)AnimationEventMa.Make_Aniamtion_Smple,
+                new AnimationInfo(0.2f, GojPanel.transform, AnimationXState.ScaleTo,
+                new AnimationFloat(0, 1.2f),
              
                 p =>{
-                     SendMsg(Common.CommonClass.mAnimationSystemName,
-                     (int)Enum.AnimationEventMa.Make_Aniamtion_Smple,
-                     new Animation.AnimationInfo(0.2f, GojPanel.transform, AnimationXState.ScaleTo,
-                     new Animation.AnimationFloat(1.2f, 1f),m =>  CallBackOfInit()));
+                     SendMsg(CommonClass.mAnimationSystemName,
+                     (int)AnimationEventMa.Make_Aniamtion_Smple,
+                     new AnimationInfo(0.2f, GojPanel.transform, AnimationXState.ScaleTo,
+                     new AnimationFloat(1.2f, 1f),m =>  CallBackOfInit()));
                  }
              ));
         }
 
         private void ReversalCloseUIFrom()
         {
-            SendMsg(Common.CommonClass.mAnimationSystemName, (int)Enum.AnimationEventMa.Make_Aniamtion_Smple,
-                new Animation.AnimationInfo(0.2f, GojPanel.transform, AnimationXState.ScaleTo,
-                new Animation.AnimationFloat(1,1.2f), p =>
+            SendMsg(CommonClass.mAnimationSystemName, (int)AnimationEventMa.Make_Aniamtion_Smple,
+                new AnimationInfo(0.2f, GojPanel.transform, AnimationXState.ScaleTo,
+                new AnimationFloat(1,1.2f), p =>
                 {
-                    SendMsg(Common.CommonClass.mAnimationSystemName, (int)Enum.AnimationEventMa.Make_Aniamtion_Smple,
-                new Animation.AnimationInfo(0.2f, GojPanel.transform, AnimationXState.ScaleTo,
-                new Animation.AnimationFloat(1.2f, 0), x => { CallBackOfEnd(); UnityEngine.Object.Destroy(GojPanel); UIEnd(); }));
+                    SendMsg(CommonClass.mAnimationSystemName, (int)AnimationEventMa.Make_Aniamtion_Smple,
+                new AnimationInfo(0.2f, GojPanel.transform, AnimationXState.ScaleTo,
+                new AnimationFloat(1.2f, 0), x => { CallBackOfEnd(); UnityEngine.Object.Destroy(GojPanel); UIEnd(); }));
                 }));
         }
 
@@ -180,7 +177,7 @@ namespace Assets.Script.Base
         public void AgainAnimationRotaSnap(float time, float org, float end, float againCount, AnimationXState axs, Transform trans,Action callback = null)
         {
 
-            SendMsg(Common.CommonClass.mAnimationSystemName, (int)AnimationEventMa.Make_Aniamtion_Smple, new Animation.AnimationInfo(time, trans, axs, new Animation.AnimationFloat(org, end), (p) =>
+            SendMsg(CommonClass.mAnimationSystemName, (int)AnimationEventMa.Make_Aniamtion_Smple, new AnimationInfo(time, trans, axs, new AnimationFloat(org, end), (p) =>
             {
                 againCount--;
 
@@ -195,17 +192,17 @@ namespace Assets.Script.Base
 
         protected void ScaleTo(float time, Transform trans,float start,float end,Action callback = null)
         {
-            SendMsg(Common.CommonClass.mAnimationSystemName, (int)AnimationEventMa.Make_Aniamtion_Smple, new Animation.AnimationInfo(time, trans, AnimationXState.ScaleTo, new Animation.AnimationFloat(start, end),x => { if(callback != null) callback(); }));
+            SendMsg(CommonClass.mAnimationSystemName, (int)AnimationEventMa.Make_Aniamtion_Smple, new AnimationInfo(time, trans, AnimationXState.ScaleTo, new AnimationFloat(start, end),x => { if(callback != null) callback(); }));
         }
 
         protected void HiddenToImg(float time, Transform trans, float start, float end, Action callback = null)
         {
-            SendMsg(Common.CommonClass.mAnimationSystemName, (int)AnimationEventMa.Make_Aniamtion_Smple, new Animation.AnimationInfo(time, trans.GetComponent<Image>(), AnimationXState.HiddenToImg, new Animation.AnimationFloat(start, end), x => { if (callback != null) callback(); }));
+            SendMsg(CommonClass.mAnimationSystemName, (int)AnimationEventMa.Make_Aniamtion_Smple, new AnimationInfo(time, trans.GetComponent<Image>(), AnimationXState.HiddenToImg, new AnimationFloat(start, end), x => { if (callback != null) callback(); }));
         }
 
         protected void WRectToImg(float time, RectTransform image, float start, float end, Action callback = null)
         {
-            SendMsg(Common.CommonClass.mAnimationSystemName, (int)AnimationEventMa.Make_Aniamtion_Smple, new Animation.AnimationInfo(time, image, AnimationXState.WRectTo, new Animation.AnimationFloat(start, end), x => { if (callback != null) callback(); }));
+            SendMsg(CommonClass.mAnimationSystemName, (int)AnimationEventMa.Make_Aniamtion_Smple, new AnimationInfo(time, image, AnimationXState.WRectTo, new AnimationFloat(start, end), x => { if (callback != null) callback(); }));
         }
 
         /// <summary>
@@ -215,7 +212,7 @@ namespace Assets.Script.Base
         /// <param name="callback"></param>
         public void Invoke(float time ,Action callback = null)
         {
-            SendMsg(Common.CommonClass.mAnimationSystemName, (int)AnimationEventMa.Make_Aniamtion_Smple, new Animation.InvokeTimeInfo(time, x => callback()));
+            SendMsg(CommonClass.mAnimationSystemName, (int)AnimationEventMa.Make_Aniamtion_Smple, new InvokeTimeInfo(time, x => callback()));
         }
 
        //private bool mIsAwake = false;
@@ -224,7 +221,7 @@ namespace Assets.Script.Base
        /// </summary>
         public virtual void UIInit()
         {
-            mDicEventDelegate = new Dictionary<int, DelExtueHandle>();
+            DicEventDelegate = new Dictionary<int, DelExtueHandle>();
         }
 
         /// <summary>
@@ -244,8 +241,8 @@ namespace Assets.Script.Base
         public virtual void UIEnd()
         {
             Cancel();
-            mDicEventDelegate.Clear();
-            mDicEventDelegate = null;
+            DicEventDelegate.Clear();
+            DicEventDelegate = null;
         }
 
         /// <summary>
@@ -274,9 +271,9 @@ namespace Assets.Script.Base
         /// </summary>
         /// <param name="_PanelData"></param>
         /// <param name="_SubEventMa"></param>
-        protected void RequiredData(Enum.ModelEventMa _SubEventMa,object msg = null)
+        protected void RequiredData(ModelEventMa _SubEventMa,object msg = null)
         {
-            SendMsg(Common.CommonClass.mModelSystemName, (int)_SubEventMa,msg);
+            SendMsg(CommonClass.mModelSystemName, (int)_SubEventMa,msg);
         }
 
         /// <summary>
@@ -284,9 +281,9 @@ namespace Assets.Script.Base
         /// </summary>
         /// <param name="_SubEventMa">数据事件</param>
         /// <param name="obejctFunction">事件</param>
-        protected void ExctureModelEvent(Enum.ModelEventMa _SubEventMa,DelExtueHandle obejctFunction)
+        protected void ExctureModelEvent(ModelEventMa _SubEventMa,DelExtueHandle obejctFunction)
         {
-            mDicEventDelegate.Add((int)_SubEventMa, obejctFunction);
+            DicEventDelegate.Add((int)_SubEventMa, obejctFunction);
         }
 
         /// <summary>
@@ -294,9 +291,9 @@ namespace Assets.Script.Base
         /// </summary>
         /// <param name="_SubEventMa"></param>
         /// <param name="msg"></param>
-        protected void UpdateModelData(Enum.ModelEventMa _SubEventMa,object msg)
+        protected void UpdateModelData(ModelEventMa _SubEventMa,object msg)
         {
-            SendMsg(Common.CommonClass.mModelSystemName, (int)_SubEventMa, msg);
+            SendMsg(CommonClass.mModelSystemName, (int)_SubEventMa, msg);
         }
 
         /// <summary>
@@ -307,7 +304,7 @@ namespace Assets.Script.Base
         /// <returns></returns>
         protected T ResAssets<T>(string assetsName) where T:UnityEngine.Object
         {
-            return Resources.ResourcesSystem.Instance.ResObj<T>(assetsName, true);
+            return ResourcesSystem.Instance.ResObj<T>(assetsName, true);
         }
 
         /// <summary>
@@ -324,8 +321,8 @@ namespace Assets.Script.Base
 
         public void FacdeUI(float time,Image img,float org,float end,Action callBack=null)
         {
-            SendMsg(Common.CommonClass.mAnimationSystemName, (int)Enum.AnimationEventMa.Make_Aniamtion_Smple,
-                new Animation.AnimationInfo(time, img, AnimationXState.BarTo, new Animation.AnimationFloat(org, end), (x) => { callBack(); }));
+            SendMsg(CommonClass.mAnimationSystemName, (int)AnimationEventMa.Make_Aniamtion_Smple,
+                new AnimationInfo(time, img, AnimationXState.BarTo, new AnimationFloat(org, end), (x) => { callBack(); }));
         }
 
         public void UICtrlInit()

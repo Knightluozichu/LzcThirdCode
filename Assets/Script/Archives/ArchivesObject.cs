@@ -8,7 +8,7 @@ using UnityEngine;
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Archives
+namespace RedRedJiang.Unity
 {
     public class ArchivesObject
     {

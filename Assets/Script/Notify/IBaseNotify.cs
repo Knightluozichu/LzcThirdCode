@@ -6,16 +6,16 @@ using System.Collections.Generic;
  * @time 2019/7/1
  */
 
-    /// <summary>
-    /// 所有类的基类
-    /// </summary>
-namespace Assets.Script.Notify
+/// <summary>
+/// 所有类的基类
+/// </summary>
+namespace RedRedJiang.Unity
 {
+    public delegate void DelExtueHandle(object message = null);
     
-    public class IBaseNotify
+    public interface IBaseNotify
     {
-        protected delegate void DelExtueHandle(object message = null);
-        protected Dictionary<int, DelExtueHandle> mDicEventDelegate = new Dictionary<int, DelExtueHandle>();
-        public virtual void  Excute(int _evenMa, object _Message = null) { }
+        Dictionary<int, DelExtueHandle> DicEventDelegate { get; set; }
+        void  Excute(int _evenMa, object _Message = null) { }
     }
 }

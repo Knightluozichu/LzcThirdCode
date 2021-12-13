@@ -1,14 +1,11 @@
-﻿
-
-using Assets.Script.Notify;
-using System;
+﻿using System;
 
 /*
  * @author LuoZichu
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Single
+namespace RedRedJiang.Unity
 {
     public class Singleton<T> where T : Singleton<T>
     {

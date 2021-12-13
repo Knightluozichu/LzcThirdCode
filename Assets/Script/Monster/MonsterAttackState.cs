@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System;
-using Assets.Script.Map;
+
 
 /*
  * @author LuoZichu
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Monster
+namespace RedRedJiang.Unity
 {
     public class MonsterAttackState : MonsterFSMState
     {
@@ -15,7 +15,7 @@ namespace Assets.Script.Monster
        
         public MonsterAttackState(MonsterBase mMonsterObj, MonsterFSMSystem mFSMSystem) : base(mMonsterObj, mFSMSystem)
         {
-            mStateID = Enum.StateID.Attack;
+            mStateID = StateID.Attack;
 
         }
 

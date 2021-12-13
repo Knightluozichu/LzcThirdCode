@@ -2,34 +2,31 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using Assets.Script.Base;
-using Assets.Script.Enum;
-using LitJson;
 
 /*
  * @author LuoZichu
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Resources
+namespace RedRedJiang.Unity
 {
-    public class ResourcesSystem : SystemBase
+    public class ResourcesSystem : SystemBase<ResourcesSystem>,ISystem
     {
-        #region Instance
-        private static ResourcesSystem _Instance;
-        public static ResourcesSystem Instance
-        {
-            get
-            {
-                if (_Instance == null)
-                {
-                    _Instance = Activator.CreateInstance<ResourcesSystem>();
-                }
+        //#region Instance
+        //private static ResourcesSystem _Instance;
+        //public static ResourcesSystem Instance
+        //{
+        //    get
+        //    {
+        //        if (_Instance == null)
+        //        {
+        //            _Instance = Activator.CreateInstance<ResourcesSystem>();
+        //        }
 
-                return _Instance;
-            }
-        }
-        #endregion
+        //        return _Instance;
+        //    }
+        //}
+        //#endregion
 
         #region Field
         private const string mPathInfo_Resource = "ResourcesList";
@@ -70,7 +67,7 @@ namespace Assets.Script.Resources
 
         public ResourcesSystem()
         {
-            mSystemName = Common.CommonClass.mResourcesSystemName;
+            mSystemName = CommonClass.mResourcesSystemName;
         }
 
         public void InitAwake()
@@ -95,7 +92,7 @@ namespace Assets.Script.Resources
             mDicResPathInfo.Clear();
             mDicChacheObj.Clear();
             DicResPathInfo.Clear();
-            _Instance = null;
+            //_Instance = null;
             mDicAssetBundle.Clear();
         }
         #endregion

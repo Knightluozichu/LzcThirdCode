@@ -8,7 +8,7 @@ using System.Text;
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Animation
+namespace RedRedJiang.Unity
 {
     public class AnimationFloat : AnimationProPerty
     {

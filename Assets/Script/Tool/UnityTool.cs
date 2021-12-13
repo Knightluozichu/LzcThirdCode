@@ -5,7 +5,7 @@
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Tool
+namespace RedRedJiang.Unity
 {
     public static class UnityTool
     {
@@ -76,7 +76,7 @@ namespace Assets.Script.Tool
 
         public static UnityEngine.GameObject CreateGameObject(string _PrefabsName, Transform _PrefabsParent)
         {
-            UnityEngine.GameObject gobPrefabs = Resources.ResourcesSystem.Instance.ResObj<UnityEngine.GameObject>(_PrefabsName, true);
+            UnityEngine.GameObject gobPrefabs = ResourcesSystem.Instance.ResObj<UnityEngine.GameObject>(_PrefabsName, true);
             if (!gobPrefabs)
             {
                 Debug.Log("要加载的对象不存在！" + "_PrefabsName:" + _PrefabsName + "     _PrefabsParent:" + _PrefabsParent + "    gobPrefabs:" + gobPrefabs);

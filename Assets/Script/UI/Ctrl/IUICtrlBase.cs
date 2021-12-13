@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Assets.Script.UI.Ctrl
+namespace RedRedJiang.Unity
 {
     public interface IUICtrlBase
     {

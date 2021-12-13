@@ -1,15 +1,5 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
-using UnityEngine.UI;
-using Assets.Script.Resources;
-using Assets.Script.Data;
-using Assets.Script.Archives;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
-using System.Runtime.Serialization;
-using System;
-using ProtoBuf;
-using Assets.Script.Data.Model;
+﻿using RedRedJiang.Unity;
+using UnityEngine;
 
 /*
  * @author LuoZichu

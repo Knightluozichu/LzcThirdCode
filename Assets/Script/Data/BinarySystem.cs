@@ -2,16 +2,14 @@
 using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using Assets.Script.Archives;
-using Assets.Script.Resources;
 using UnityEngine;
 
-namespace Assets.Script.Data
+namespace RedRedJiang.Unity
 {
     /// <summary>
     /// 二进制 序列化 和 反序列化
     /// </summary>
-    public class BinarySystem : Single.Singleton<BinarySystem>, IBinary
+    public class BinarySystem : Singleton<BinarySystem>, IBinary
     {
         private const string mBytesName = ".bytes";
 

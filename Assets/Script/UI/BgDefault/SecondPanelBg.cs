@@ -1,14 +1,8 @@
-﻿using Assets.Script.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Assets.Script.UI.BgDefault
+﻿namespace RedRedJiang.Unity
 {
     public class SecondPanelBg : BgDefaultBase
     {
-        public SecondPanelBg() : base(Common.CommonClass.mSecondPanelBgDefaultName)
+        public SecondPanelBg() : base(CommonClass.mSecondPanelBgDefaultName)
         {
 
         }

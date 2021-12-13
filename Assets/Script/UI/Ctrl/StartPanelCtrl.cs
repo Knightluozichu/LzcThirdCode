@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Assets.Script.Base;
-using Assets.Script.UI.Data;
-
-namespace Assets.Script.UI.Ctrl
+﻿namespace RedRedJiang.Unity
 {
     public class StartPanelCtrl : UICtrlBase, IUICtrlBase
     {
@@ -29,7 +22,7 @@ namespace Assets.Script.UI.Ctrl
             if (mUIBaseRef is StartPanelView)
             {
                 StartPanelView sp = mUIBaseRef as StartPanelView;
-                sp.ButtonOnClick.onClick.AddListener(() => { sp.Open(Common.CommonClass.mSecondPanelName); sp.Close(); });
+                sp.ButtonOnClick.onClick.AddListener(() => { sp.Open(CommonClass.mSecondPanelName); sp.Close(); });
             }
         }
     }

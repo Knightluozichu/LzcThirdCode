@@ -1,14 +1,12 @@
 ﻿using System.Collections.Generic;
-using Assets.Script.Enum;
 using UnityEngine;
-using Assets.Script.Base;
 
 /*
  * @author LuoZichu
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Monster
+namespace RedRedJiang.Unity
 {
     public abstract class MonsterFSMState
     {

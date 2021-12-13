@@ -1,13 +1,11 @@
-﻿using Assets.Script.UI;
-using Assets.Script.UI.BgDefault;
-using UnityEngine;
+﻿using UnityEngine;
 
 /*
  * @author LuoZichu
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Tool
+namespace RedRedJiang.Unity
 {
     public static class UITool
     {

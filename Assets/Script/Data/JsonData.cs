@@ -11,7 +11,7 @@ using UnityEngine;
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Data
+namespace RedRedJiang.Unity
 {
     class JsonData : IJsonClass
     {
@@ -72,7 +72,7 @@ namespace Assets.Script.Data
 
         public T JsonABAnalysis<T>(string _Name) where T : class
         {
-            UnityEngine.Object obj = Resources.ResourcesSystem.Instance.ResObj<UnityEngine.Object>(_Name, false);
+            UnityEngine.Object obj = ResourcesSystem.Instance.ResObj<UnityEngine.Object>(_Name, false);
             if (!obj) return null;
             return AnalysisJson<T>(obj);
         }

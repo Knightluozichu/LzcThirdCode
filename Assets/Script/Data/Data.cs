@@ -8,7 +8,7 @@ using System.Text;
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Data
+namespace RedRedJiang.Unity
 {
 
 }

@@ -1,15 +1,10 @@
-﻿using Assets.Script.Base;
-using UnityEngine;
-using UnityEngine.UI;
-using Assets.Script.Tool;
-using Assets.Script.UI.Ctrl;
-using Assets.Script.UI.Data;
+﻿using UnityEngine.UI;
 
-namespace Assets.Script.UI
+namespace RedRedJiang.Unity
 {
     public class SecondPanelView : UIBase
     {
-        public SecondPanelView() : base(Common.CommonClass.mSecondPanelName)
+        public SecondPanelView() : base(CommonClass.mSecondPanelName)
         {
 
         }

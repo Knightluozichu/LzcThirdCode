@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Assets.Script.Enum;
 using UnityEngine;
 
 /*
@@ -7,7 +6,7 @@ using UnityEngine;
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Monster
+namespace RedRedJiang.Unity
 {
     public class MonsterFSMSystem
     {

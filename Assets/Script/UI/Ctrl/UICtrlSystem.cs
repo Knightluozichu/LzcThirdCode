@@ -1,27 +1,21 @@
-﻿using Assets.Script.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Assets.Script.UI.Ctrl
+﻿namespace RedRedJiang.Unity
 {
-    public class UICtrlSystem : SystemBase
+    public class UICtrlSystem : SystemBase<UICtrlSystem>, ISystem
     {
-        #region 单例
-        private static UISystem _Instance;
-        public static UISystem Instance
-        {
-            get
-            {
-                if (_Instance == null)
-                {
-                    _Instance = Activator.CreateInstance<UISystem>();
-                }
+        //#region 单例
+        //private static UISystem _Instance;
+        //public static UISystem Instance
+        //{
+        //    get
+        //    {
+        //        if (_Instance == null)
+        //        {
+        //            _Instance = Activator.CreateInstance<UISystem>();
+        //        }
 
-                return _Instance;
-            }
-        }
-        #endregion
+        //        return _Instance;
+        //    }
+        //}
+        //#endregion
     }
 }

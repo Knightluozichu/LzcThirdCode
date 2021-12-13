@@ -4,7 +4,7 @@
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Enum
+namespace RedRedJiang.Unity
 {
     public enum UIFormPos
     {

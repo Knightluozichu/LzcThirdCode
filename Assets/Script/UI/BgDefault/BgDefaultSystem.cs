@@ -1,30 +1,27 @@
-﻿using Assets.Script.Base;
-using Assets.Script.Common;
-using Assets.Script.Tool;
-using System;
-using UnityEngine;
+﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.Script.UI.BgDefault
+namespace RedRedJiang.Unity
 {
-    public class BgDefaultSystem : SystemBase
+    public class BgDefaultSystem : SystemBase<BgDefaultSystem>
     {
-        #region 单例
-        private static BgDefaultSystem _Instance;
-        public static BgDefaultSystem Instance
-        {
-            get
-            {
-                if (_Instance == null)
-                {
-                    _Instance = Activator.CreateInstance<BgDefaultSystem>();
-                }
+        //#region 单例
+        //private static BgDefaultSystem _Instance;
+        //public static BgDefaultSystem Instance
+        //{
+        //    get
+        //    {
+        //        if (_Instance == null)
+        //        {
+        //            _Instance = Activator.CreateInstance<BgDefaultSystem>();
+        //        }
 
-                return _Instance;
-            }
-        }
-        #endregion
+        //        return _Instance;
+        //    }
+        //}
+        //#endregion
 
 
         private const string mBg_Trans_DefaultName = "Goj_Trans_Default";

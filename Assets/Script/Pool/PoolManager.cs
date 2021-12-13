@@ -1,5 +1,4 @@
-﻿using Assets.Script.Single;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 /*
@@ -7,7 +6,7 @@ using UnityEngine;
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Pool
+namespace RedRedJiang.Unity
 {
     public class PoolManager : Singleton<PoolManager>
     {

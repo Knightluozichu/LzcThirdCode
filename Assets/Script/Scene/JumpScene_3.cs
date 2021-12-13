@@ -1,18 +1,9 @@
-﻿using Assets.Script.Animation;
-using Assets.Script.Base;
-using Assets.Script.Data.Model;
-using Assets.Script.Enum;
-using Assets.Script.Game;
-using Assets.Script.Map;
-using Assets.Script.Resources;
-using Assets.Script.UI;
-
-/*
+﻿/*
  * @author LuoZichu
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Scene
+namespace RedRedJiang.Unity
 {
     public class JumpScene_3 : SceneBase
     {
@@ -26,7 +17,7 @@ namespace Assets.Script.Scene
         {
             Register((int)SceneEventMa.GameScene_2);
 
-            mDicEventDelegate.Add((int)SceneEventMa.GameScene_2, GameScene_2Scene);
+            DicEventDelegate.Add((int)SceneEventMa.GameScene_2, GameScene_2Scene);
 
 
 

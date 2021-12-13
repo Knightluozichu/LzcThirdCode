@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using Assets.Script.Data.Model;
-using Assets.Script.Notify;
 using UnityEngine;
 
 /*
@@ -8,19 +6,19 @@ using UnityEngine;
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Base
+namespace RedRedJiang.Unity
 {
     public class ModelBase : IBaseNotify
     {
         #region Excute
 
-        public override void Excute(int _evenMa, object _Message = null)
+        public  void Excute(int _evenMa, object _Message = null)
         {
-            if (mDicEventDelegate.Count > 0)
+            if (DicEventDelegate.Count > 0)
             {
-                if (mDicEventDelegate.ContainsKey(_evenMa))
+                if (DicEventDelegate.ContainsKey(_evenMa))
                 {
-                    mDicEventDelegate[_evenMa](_Message);
+                    DicEventDelegate[_evenMa](_Message);
                 }
                 else
                 {
@@ -38,6 +36,10 @@ namespace Assets.Script.Base
         #region information
         //缓存自身的时间集合
         private List<int> mListEventMa = new List<int>();
+
+        private Dictionary<int, DelExtueHandle> mDicEventDelegate = new Dictionary<int, DelExtueHandle>();
+        public Dictionary<int, DelExtueHandle> DicEventDelegate { get => mDicEventDelegate; set => mDicEventDelegate = value; }
+
 
         public void Register(params int[] _EventMa)
         {
@@ -68,8 +70,8 @@ namespace Assets.Script.Base
         public void ModelEnd()
         {
             Cancel();
-            mDicEventDelegate.Clear();
-            mDicEventDelegate = null;
+            DicEventDelegate.Clear();
+            DicEventDelegate = null;
         }
         #endregion
     }

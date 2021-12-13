@@ -1,6 +1,4 @@
-﻿using Assets.Script.Game;
-using System.Collections.Generic;
-using Assets.Script.Notify;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 /*
@@ -8,19 +6,19 @@ using UnityEngine;
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Base
+namespace RedRedJiang.Unity
 {
     public class GameBase :IBaseNotify
     {
         #region Excute
 
-        public override void Excute(int _evenMa, object _Message = null)
+        public  void Excute(int _evenMa, object _Message = null)
         {
-            if (mDicEventDelegate.Count > 0)
+            if (DicEventDelegate.Count > 0)
             {
-                if (mDicEventDelegate.ContainsKey(_evenMa))
+                if (DicEventDelegate.ContainsKey(_evenMa))
                 {
-                    mDicEventDelegate[_evenMa](_Message);
+                    DicEventDelegate[_evenMa](_Message);
                 }
                 else
                 {
@@ -77,6 +75,9 @@ namespace Assets.Script.Base
                 return mCProperty;
             }
         }
+        private Dictionary<int, DelExtueHandle> mDicEventDelegate = new Dictionary<int, DelExtueHandle>();
+        public Dictionary<int, DelExtueHandle> DicEventDelegate { get => mDicEventDelegate; set => mDicEventDelegate = value; }
+
 
         public GameBase(CharacterProperty mCProperty = null)
         {

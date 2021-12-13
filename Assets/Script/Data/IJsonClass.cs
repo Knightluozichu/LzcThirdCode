@@ -9,7 +9,7 @@ using UnityEngine;
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Data
+namespace RedRedJiang.Unity
 {
     public abstract class IJsonClass
     {

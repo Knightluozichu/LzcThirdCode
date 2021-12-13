@@ -1,33 +1,27 @@
-﻿using System;
-using Assets.Script.Base;
-using UnityEngine;
-using Assets.Script.Game;
-using Assets.Script.Archives;
-
-/*
+﻿/*
  * @author LuoZichu
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Data.Model
+namespace RedRedJiang.Unity
 {
-    public class ModelSystem : SystemBase
+    public class ModelSystem : SystemBase<ModelSystem>, ISystem
     {
-        #region Signle
-        private static ModelSystem _Instance;
-        public static ModelSystem Instance
-        {
-            get
-            {
-                if (_Instance == null)
-                {
-                    _Instance = Activator.CreateInstance<ModelSystem>();
-                }
+        //#region Signle
+        //private static ModelSystem _Instance;
+        //public static ModelSystem Instance
+        //{
+        //    get
+        //    {
+        //        if (_Instance == null)
+        //        {
+        //            _Instance = Activator.CreateInstance<ModelSystem>();
+        //        }
 
-                return _Instance;
-            }
-        }
-        #endregion
+        //        return _Instance;
+        //    }
+        //}
+        //#endregion
 
         #region Field
 
@@ -47,7 +41,7 @@ namespace Assets.Script.Data.Model
 
         public ModelSystem()
         {
-            mSystemName = Common.CommonClass.mModelSystemName;
+            mSystemName = CommonClass.mModelSystemName;
 
         }
 

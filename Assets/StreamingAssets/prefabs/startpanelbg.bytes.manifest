@@ -29,5 +29,5 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Art/Prefabs/StartPanelBg.prefab
 Dependencies:
-- "E:/Project/Unity/\u7F57\u5B50\u521D\u5C0F\u6E38\u620F\u5C0F\u5C0F\u5E93/LzcThirdCode/Assets/StreamingAssets/textures/canvas_bg/start_bg_panel/loading.bytes"
-- "E:/Project/Unity/\u7F57\u5B50\u521D\u5C0F\u6E38\u620F\u5C0F\u5C0F\u5E93/LzcThirdCode/Assets/StreamingAssets/textures/canvas_bg/start_bg_panel/logo.bytes"
+- E:/Project/Unity/LzcThirdCode/Assets/StreamingAssets/textures/canvas_bg/start_bg_panel/loading.bytes
+- E:/Project/Unity/LzcThirdCode/Assets/StreamingAssets/textures/canvas_bg/start_bg_panel/logo.bytes

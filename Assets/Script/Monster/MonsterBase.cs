@@ -1,13 +1,11 @@
-﻿using Assets.Script.Base;
-using Assets.Script.Tool;
-using UnityEngine;
+﻿using UnityEngine;
 
 /*
  * @author LuoZichu
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Monster
+namespace RedRedJiang.Unity
 {
     public class MonsterBase : GameBase
     {
@@ -25,7 +23,7 @@ namespace Assets.Script.Monster
         private SpriteRenderer mWarringTrans;
         private float mAttackSpeed;
         private Transform mGob_Blood;
-        public Transform Gob_Blood { get { return mGob_Blood = mGob_Blood ?? UI.UISystem.Instance.UICanvas.Find(@"Normal/GamePanel/Gob_Blood"); } }
+        public Transform Gob_Blood { get { return mGob_Blood = mGob_Blood ?? UISystem.Instance.UICanvas.Find(@"Normal/GamePanel/Gob_Blood"); } }
         public float AttackSpeed { get { return mAttackSpeed; } protected set { mAttackSpeed = value; mCProperty.AttackSpeed = mAttackSpeed; } }
         public SpriteRenderer WarringTrans
         {
@@ -82,7 +80,7 @@ namespace Assets.Script.Monster
         }
 
 
-        public void MonsterChangeFSM(Enum.StateTransition id)
+        public void MonsterChangeFSM(StateTransition id)
         {
 
             mMonsterFsm.PerformTransition(id);
@@ -92,15 +90,15 @@ namespace Assets.Script.Monster
         public void MonsterEnd()
         {
 
-            mMonsterFsm.DeleteState(Enum.StateID.Attack);
-            mMonsterFsm.DeleteState(Enum.StateID.Death);
-            mMonsterFsm.DeleteState(Enum.StateID.Run);
-            mMonsterFsm.DeleteState(Enum.StateID.Stand);
+            mMonsterFsm.DeleteState(StateID.Attack);
+            mMonsterFsm.DeleteState(StateID.Death);
+            mMonsterFsm.DeleteState(StateID.Run);
+            mMonsterFsm.DeleteState(StateID.Stand);
 
 
             Cancel();
-            mDicEventDelegate.Clear();
-            mDicEventDelegate = null;
+            DicEventDelegate.Clear();
+            DicEventDelegate = null;
         }
 
 

@@ -1,36 +1,31 @@
-﻿using Assets.Script.Base;
-using System;
-using UnityEngine;
-using Assets.Script.Tool;
-using Assets.Script.Resources;
+﻿using System;
 using System.Collections.Generic;
-using Assets.Script.Common;
-using UnityEngine.UI;
+using UnityEngine;
 
 /*
  * @author LuoZichu
  * @time 2019/7/1
  */
 
-namespace Assets.Script.UI
+namespace RedRedJiang.Unity
 {
-    public class UISystem : SystemBase
+    public class UISystem : SystemBase<UISystem>, ISystem
     {
-        #region 单例
-        private static UISystem _Instance;
-        public static UISystem Instance
-        {
-            get
-            {
-                if (_Instance == null)
-                {
-                    _Instance = Activator.CreateInstance<UISystem>();
-                }
+        //#region 单例
+        //private static UISystem _Instance;
+        //public static UISystem Instance
+        //{
+        //    get
+        //    {
+        //        if (_Instance == null)
+        //        {
+        //            _Instance = Activator.CreateInstance<UISystem>();
+        //        }
 
-                return _Instance;
-            }
-        }
-        #endregion
+        //        return _Instance;
+        //    }
+        //}
+        //#endregion
 
         #region UIBase
 
@@ -88,7 +83,7 @@ namespace Assets.Script.UI
         #region Public
         public UISystem()
         {
-            mSystemName = Common.CommonClass.mUISystemName;
+            mSystemName = CommonClass.mUISystemName;
         }
 
         public void InitAwake()
@@ -109,7 +104,7 @@ namespace Assets.Script.UI
         public void Init()
         {
             InitAwake();
-            BgDefault.BgDefaultSystem.Instance.BgDefaultInitAwake();
+            BgDefaultSystem.Instance.BgDefaultInitAwake();
 
         }
 
@@ -203,13 +198,13 @@ namespace Assets.Script.UI
                 {
                     switch (_UIBase.UIForm_Pos)
                     {
-                        case Enum.UIFormPos.Normal:
+                        case UIFormPos.Normal:
                             _UINormal.transform.SetParent(Tran_FullNode, false);
                             break;
-                        case Enum.UIFormPos.Reversal:
+                        case UIFormPos.Reversal:
                             _UINormal.transform.SetParent(Tran_ReversalNode, false);
                             break;
-                        case Enum.UIFormPos.Pop:
+                        case UIFormPos.Pop:
                             _UINormal.transform.SetParent(Tran_PopNode, false);
                             break;
                     }

@@ -1,4 +1,4 @@
-﻿using Assets.Script.Base;
+﻿
 using System;
 using System.Collections.Generic;
 
@@ -7,25 +7,25 @@ using System.Collections.Generic;
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Map
+namespace RedRedJiang.Unity
 {
-    public class GameMapSystem : SystemBase
+    public class GameMapSystem : SystemBase<GameMapSystem>, ISystem
     {
-        #region Instance
-        private static GameMapSystem _Instance;
-        public static GameMapSystem Instance
-        {
-            get
-            {
-                if (_Instance == null)
-                {
-                    _Instance = Activator.CreateInstance<GameMapSystem>();
-                }
+        //#region Instance
+        //private static GameMapSystem _Instance;
+        //public static GameMapSystem Instance
+        //{
+        //    get
+        //    {
+        //        if (_Instance == null)
+        //        {
+        //            _Instance = Activator.CreateInstance<GameMapSystem>();
+        //        }
 
-                return _Instance;
-            }
-        }
-        #endregion
+        //        return _Instance;
+        //    }
+        //}
+        //#endregion
 
         #region Method
 
@@ -33,7 +33,7 @@ namespace Assets.Script.Map
 
         public GameMapSystem()
         {
-            mSystemName = Common.CommonClass.mGameMapSystemName;
+            mSystemName = CommonClass.mGameMapSystemName;
         }
 
         public void GameInit()

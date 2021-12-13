@@ -1,11 +1,8 @@
-﻿using Assets.Script.Base;
-
-
-namespace Assets.Script.UI.BgDefault
+﻿namespace RedRedJiang.Unity
 {
     public class StartPanelBg :BgDefaultBase
     {
-        public StartPanelBg() : base(Common.CommonClass.mStartPanelBgDefaultName)
+        public StartPanelBg() : base(CommonClass.mStartPanelBgDefaultName)
         {
 
         }

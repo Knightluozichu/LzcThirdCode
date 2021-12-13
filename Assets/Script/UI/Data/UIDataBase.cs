@@ -1,23 +1,19 @@
-﻿using Assets.Script.Notify;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Script.UI.Data
+namespace RedRedJiang.Unity
 {
     public class UIDataBase : IBaseNotify
     {
         #region Excute
 
-        public override void Excute(int _evenMa, object _Message = null)
+        public  void Excute(int _evenMa, object _Message = null)
         {
-            if (mDicEventDelegate.Count > 0)
+            if (DicEventDelegate.Count > 0)
             {
-                if (mDicEventDelegate.ContainsKey(_evenMa))
+                if (DicEventDelegate.ContainsKey(_evenMa))
                 {
-                    mDicEventDelegate[_evenMa](_Message);
+                    DicEventDelegate[_evenMa](_Message);
                 }
                 else
                 {
@@ -35,6 +31,10 @@ namespace Assets.Script.UI.Data
         #region information
         //缓存自身的时间集合
         private List<int> mListEventMa = new List<int>();
+
+        private Dictionary<int, DelExtueHandle> mDicEventDelegate = new Dictionary<int, DelExtueHandle>();
+        public Dictionary<int, DelExtueHandle> DicEventDelegate { get => mDicEventDelegate; set => mDicEventDelegate = value; }
+
 
         public void Register(params int[] _EventMa)
         {

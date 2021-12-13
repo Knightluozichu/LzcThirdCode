@@ -9,7 +9,7 @@ using UnityEngine;
  * @time 2019/7/1
  */
 
-namespace Assets.Script.Log
+namespace RedRedJiang.Unity
 {
     public class LogMsg
     {
