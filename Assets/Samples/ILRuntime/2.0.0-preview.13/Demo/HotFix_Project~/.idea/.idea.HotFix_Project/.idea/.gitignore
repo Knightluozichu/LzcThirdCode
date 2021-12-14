@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/.idea.HotFix_Project.iml
+/modules.xml
+/projectSettingsUpdater.xml
+# Datasource local storage ignored files
+/../../../../../../../../../../../../../:\Project\Unity\LzcThirdCode\Assets\Samples\ILRuntime\2.0.0-preview.13\Demo\HotFix_Project~\.idea\.idea.HotFix_Project\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
