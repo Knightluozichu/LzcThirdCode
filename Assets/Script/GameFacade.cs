@@ -39,6 +39,7 @@ namespace RedRedJiang.Unity
             mDic.Add(CommonClass.mAudioSystemName, AudioSystem.Instance);
             mDic.Add(CommonClass.mUICtrlSystemName, UICtrlSystem.Instance);
 
+            ResourceVersionCheckSystem.Instance.Init();
             ResourcesSystem.Instance.Init();
             UISystem.Instance.Init();
             AudioSystem.Instance.InitAwake();
