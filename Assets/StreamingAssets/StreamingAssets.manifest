@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 2279946650
+CRC: 700360865
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -36,4 +36,10 @@ AssetBundleManifest:
       Dependencies: {}
     Info_10:
       Name: data/item.bytes
+      Dependencies: {}
+    Info_11:
+      Name: startgame/hotfix_project.dll.bytes
+      Dependencies: {}
+    Info_12:
+      Name: startgame/hotfix_project.pdb.bytes
       Dependencies: {}

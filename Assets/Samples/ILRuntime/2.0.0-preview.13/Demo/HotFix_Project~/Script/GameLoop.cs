@@ -5,10 +5,18 @@
  * @time 2019/7/1
  */
 
+
 namespace RedRedJiang.Unity
 {
     public class GameLoop : MonoBehaviour
     {
+        public static void Init()
+        {
+            var gl =  new GameObject("GameLoop");
+            gl.AddComponent<GameLoop>();
+            Debug.Log("hot fix run!");
+        }
+
         FlieLog fl;
         private void Awake()
         {
@@ -17,12 +25,13 @@ namespace RedRedJiang.Unity
             DontDestroyOnLoad(this.gameObject);
             Application.targetFrameRate = 60;
             GameFacade.Instance.Init();
+            Debug.Log("GameLoop awake");
         }
 
         private void Start()
         {
            
-            SceneStateController.Instance.SetState(new TheFrontLine_1(), false);
+            //SceneStateController.Instance.SetState(new TheFrontLine_1(), false);
             
         }
 
@@ -46,10 +55,11 @@ namespace RedRedJiang.Unity
 
         private void Update()
         {
-            if(SceneStateController.Instance != null)
-            {
-                SceneStateController.Instance.StateUpdate();
-            }
+            GameFacade.Instance.Update();
+            //if (SceneStateController.Instance != null)
+            //{
+            //    SceneStateController.Instance.StateUpdate();
+            //}
 
         }
 

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using LitJson;
+//using LitJson;
 using UnityEngine;
 
 namespace HotFix_Project
@@ -56,17 +56,17 @@ namespace HotFix_Project
             cls.DicTest2 = new Dictionary<string, int>();
             cls.DicTest2["111222"] = 333444;
 
-            var str = JsonMapper.ToJson(cls);
-            Debug.Log("---------------");
-            Debug.Log(str);
-            Debug.Log("---------------");
-            var cls2 = JsonMapper.ToObject<JsonTestClass>(str);
-            Debug.Log(cls2.SubClassProp.ArrayProp[0].LongProp);
-            Debug.Log(cls2.SubClassProp.ArrayProp[1].LongProp);
-            Debug.Log(cls2.SubClassProp.SubClassList[0].LongProp);
-            Debug.Log(cls2.SubClassProp.SubClassList[1].LongProp);
-            Debug.Log(cls2.DicTest["11111"].LongProp);
-            Debug.Log(cls2.DicTest2["111222"]);
+            //var str = JsonMapper.ToJson(cls);
+            //Debug.Log("---------------");
+            //Debug.Log(str);
+            //Debug.Log("---------------");
+            //var cls2 = JsonMapper.ToObject<JsonTestClass>(str);
+            //Debug.Log(cls2.SubClassProp.ArrayProp[0].LongProp);
+            //Debug.Log(cls2.SubClassProp.ArrayProp[1].LongProp);
+            //Debug.Log(cls2.SubClassProp.SubClassList[0].LongProp);
+            //Debug.Log(cls2.SubClassProp.SubClassList[1].LongProp);
+            //Debug.Log(cls2.DicTest["11111"].LongProp);
+            //Debug.Log(cls2.DicTest2["111222"]);
         }
     }
 }

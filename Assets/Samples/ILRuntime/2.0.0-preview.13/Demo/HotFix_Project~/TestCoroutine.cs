@@ -8,7 +8,7 @@ namespace HotFix_Project
     {
         public static void RunTest()
         {
-            CoroutineDemo.Instance.DoCoroutine(Coroutine());
+            //CoroutineDemo.Instance.DoCoroutine(Coroutine());
         }
 
         static System.Collections.IEnumerator Coroutine()

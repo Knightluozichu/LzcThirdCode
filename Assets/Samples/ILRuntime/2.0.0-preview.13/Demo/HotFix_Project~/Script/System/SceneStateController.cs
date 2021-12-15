@@ -10,7 +10,7 @@ namespace RedRedJiang.Unity
 {
     public class SceneStateController : SystemBase<SceneStateController>, ISystem
     {
-        
+
         //private static SceneStateController _Instance;
         //public static SceneStateController Instance
         //{
@@ -33,9 +33,9 @@ namespace RedRedJiang.Unity
         private AsyncOperation mAsyOp;
         private SceneBase mIScene;
         private bool isRunStart;
-        public void SetState(SceneBase _IScene,bool isLoadAsync = true)
+        public void SetState(SceneBase _IScene, bool isLoadAsync = true)
         {
-            if(mIScene != null)
+            if (mIScene != null)
             {
                 mIScene.StateEnd();
             }
@@ -58,13 +58,13 @@ namespace RedRedJiang.Unity
         {
             if (mAsyOp != null && !mAsyOp.isDone) return;
 
-            if(mAsyOp != null && mAsyOp.isDone && !isRunStart)
+            if (mAsyOp != null && mAsyOp.isDone && !isRunStart)
             {
                 isRunStart = true;
                 mAsyOp = null;
             }
 
-            if(mIScene != null)
+            if (mIScene != null)
             {
                 if (isRunStart)
                 {
@@ -74,7 +74,15 @@ namespace RedRedJiang.Unity
 
                 mIScene.StateUpdate();
             }
-            
+
+        }
+
+        public void End()
+        {
+            mAsyOp = null;
+            mIScene.StateEnd();
+            mIScene = null;
+            isRunStart = false;
         }
     }
 }

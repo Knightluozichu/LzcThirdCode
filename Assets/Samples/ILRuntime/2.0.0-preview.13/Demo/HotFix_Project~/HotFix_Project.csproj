@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HotFix_Project</RootNamespace>
     <AssemblyName>HotFix_Project</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -17,11 +17,12 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\..\StreamingAssets\</OutputPath>
+    <OutputPath>..\..\..\..\..\Art\StartGame\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,12 +32,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp">
+    <!-- <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\..\Library\ScriptAssemblies\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
-    </Reference>
+    </Reference> -->
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -381,15 +383,15 @@
     <Compile Include="Script\Animation\AnimationFloat.cs" />
     <Compile Include="Script\Animation\AnimationInfo.cs" />
     <Compile Include="Script\Animation\AnimationProPerty.cs" />
-    <Compile Include="Script\Animation\AnimationSystem.cs" />
+    <Compile Include="Script\System\AnimationSystem.cs" />
     <Compile Include="Script\Animation\AnimationVec3.cs" />
     <Compile Include="Script\Animation\ExcuteAnimation.cs" />
     <Compile Include="Script\Animation\FingerEffect.cs" />
     <Compile Include="Script\Animation\InvokeTimeInfo.cs" />
     <Compile Include="Script\Archives\ArchivesObject.cs" />
-    <Compile Include="Script\Archives\ArchivesSystem.cs" />
+    <Compile Include="Script\System\ArchivesSystem.cs" />
     <Compile Include="Script\Audio\AudioInfo.cs" />
-    <Compile Include="Script\Audio\AudioSystem.cs" />
+    <Compile Include="Script\System\AudioSystem.cs" />
     <Compile Include="Script\Base\AnimationBase.cs" />
     <Compile Include="Script\Base\AudioBase.cs" />
     <Compile Include="Script\Base\BgDefaultBase.cs" />
@@ -401,7 +403,7 @@
     <Compile Include="Script\ClassStatic\StaticRectangular.cs" />
     <Compile Include="Script\Common\CommonClass.cs" />
     <Compile Include="Script\Common\CustomEventTriggerListener.cs" />
-    <Compile Include="Script\Data\BinarySystem.cs" />
+    <Compile Include="Script\System\BinarySystem.cs" />
     <Compile Include="Script\Data\Data.cs" />
     <Compile Include="Script\Data\IBinary.cs" />
     <Compile Include="Script\Data\IJsonClass.cs" />
@@ -412,12 +414,12 @@
     <Compile Include="Script\Enum\EventEnum.cs" />
     <Compile Include="Script\GameFacade.cs" />
     <Compile Include="Script\GameLoop.cs" />
-    <Compile Include="Script\Game\GameSystem.cs" />
+    <Compile Include="Script\System\GameSystem.cs" />
     <Compile Include="Script\Interface\ISystem.cs" />
     <Compile Include="Script\Log\FlieLog.cs" />
     <Compile Include="Script\Log\ILogger.cs" />
     <Compile Include="Script\Log\LogMsg.cs" />
-    <Compile Include="Script\Map\GameMapSystem.cs" />
+    <Compile Include="Script\System\GameMapSystem.cs" />
     <Compile Include="Script\Monster\MonsterAttackState.cs" />
     <Compile Include="Script\Monster\MonsterBase.cs" />
     <Compile Include="Script\Monster\MonsterDeadState.cs" />
@@ -432,11 +434,10 @@
     <Compile Include="Script\Pool\SubPool.cs" />
     <Compile Include="Script\Resources\IResources.cs" />
     <Compile Include="Script\Resources\ResourcesMD5.cs" />
-    <Compile Include="Script\Resources\ResourcesSystem.cs" />
-    <Compile Include="Script\Resources\ResourceVersionCheckSystem.cs" />
+    <Compile Include="Script\System\ResourcesSystem.cs" />
     <Compile Include="Script\Scene\GameScene_2.cs" />
     <Compile Include="Script\Scene\JumpScene_3.cs" />
-    <Compile Include="Script\Scene\SceneStateController.cs" />
+    <Compile Include="Script\System\SceneStateController.cs" />
     <Compile Include="Script\Scene\TheFrontLine_1.cs" />
     <Compile Include="Script\Single\Singleton.cs" />
     <Compile Include="Script\Table\Editor\ProtoTools\DataTools_EditorForProto.cs" />
@@ -538,7 +539,7 @@
     <Compile Include="Script\Tool\Mini_Sawtooth.cs" />
     <Compile Include="Script\Tool\UITool.cs" />
     <Compile Include="Script\Tool\UnityTool.cs" />
-    <Compile Include="Script\UI\BgDefault\BgDefaultSystem.cs" />
+    <Compile Include="Script\System\BgDefaultSystem.cs" />
     <Compile Include="Script\UI\BgDefault\SecondPanelBg.cs" />
     <Compile Include="Script\UI\BgDefault\StartPanelBg.cs" />
     <Compile Include="Script\UI\Ctrl\IUICtrlBase.cs" />
@@ -550,7 +551,7 @@
     <Compile Include="Script\UI\Data\SecondPanelData.cs" />
     <Compile Include="Script\UI\Data\StartPanelData.cs" />
     <Compile Include="Script\UI\Data\UIDataBase.cs" />
-    <Compile Include="Script\UI\UISystem.cs" />
+    <Compile Include="Script\System\UISystem.cs" />
     <Compile Include="Script\UI\View\SecondPanelView.cs" />
     <Compile Include="Script\UI\View\StartPanelView.cs" />
     <Compile Include="TestJson.cs" />
@@ -565,6 +566,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+    <Folder Include="Script\Game\" />
+    <Folder Include="Script\Map\" />
     <Folder Include="Script\SceneCamera\" />
     <Folder Include="Script\Table\protobuf-net\bin\Debug\" />
     <Folder Include="Script\Table\protobuf-net\bin\Profile\" />

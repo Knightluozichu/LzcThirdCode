@@ -5,9 +5,25 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using RedRedJiang.Unity.Start;
 
-namespace RedRedJiang.Unity
+namespace RedRedJiang.Unity.Update
 {
+    #region Serializable
+    [Serializable]
+    public class KeyValuesInfo
+    {
+        public List<KeyValuesNode> mKeyValuesInfo;
+    }
+    [Serializable]
+    public class KeyValuesNode
+    {
+        public string mKey;
+        public string mValues;
+    }
+
+    #endregion
+
     [Serializable]
     public class RemoteConfig
     {
@@ -15,8 +31,20 @@ namespace RedRedJiang.Unity
         public string remoteMD5file;
     }
 
-    public class ResourceVersionCheckSystem : SystemBase<ResourceVersionCheckSystem>, ISystem
+    public class ResourceVersionCheckSystem : MonoBehaviour
     {
+        //public Action StartGame;
+
+        private void Awake()
+        {
+            //DontDestroyOnLoad(this);
+        }
+
+        private void Start()
+        {
+            Init();
+        }
+
         //配置文件路径
         //远程资源地址
         //远程ResourcesList_MD5地址
@@ -41,6 +69,7 @@ namespace RedRedJiang.Unity
 
         public void Init()
         {
+
             var fileTa = Resources.Load<TextAsset>(_resourceVersionName);
 
             rConfig = JsonMapper.ToObject<RemoteConfig>(fileTa.text);
@@ -197,6 +226,10 @@ namespace RedRedJiang.Unity
                             }
 
                             downFile.Clear();
+
+                            var gameMain = Resources.Load<GameObject>("GameMain");
+                            GameObject.Instantiate(gameMain);
+                            //GameObject.Find("GameMain").GetComponent<GameMain>().enabled = true;
                         }
                         catch (Exception ex)
                         {

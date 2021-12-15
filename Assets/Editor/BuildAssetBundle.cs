@@ -79,6 +79,7 @@ public class BuildAssetBundle
     private const string mDataPathName = "Data";
     private const string mAudioPathName = "Audio";
     private const string mShaderPathName = "Shader";
+    private const string mStartGamePathName = "StartGame";
 
     private static KeyValuesInfo mKeyValue = new KeyValuesInfo();
     private static List<KeyValuesNode> mListKey = new List<KeyValuesNode>();
@@ -113,15 +114,16 @@ public class BuildAssetBundle
         SetAssetName(mDataPathName);
         SetAssetName(mAudioPathName);
         SetAssetName(mShaderPathName);
+        SetAssetName(mStartGamePathName);
         Init();
     }
 
-    [MenuItem("AssetBundle/Make MD5")]
+    [MenuItem("AssetBundle/Make MD5", false, 1)]
     private static void MakeMd5Async()
     {
         var jsonPath = Path.Combine(Application.streamingAssetsPath, mPathInfo_MD5 + ".json");
 
-        if(File.Exists(jsonPath))
+        if (File.Exists(jsonPath))
         {
             File.Delete(jsonPath);
             AssetDatabase.Refresh();
@@ -159,12 +161,12 @@ public class BuildAssetBundle
 
         string json = JsonUtility.ToJson(mKeyValue_MD5, true);
 
-        
+
         if (!File.Exists(jsonPath))
         {
             File.Create(jsonPath).Close();
         }
-        
+
         File.WriteAllText(jsonPath, json);
 
         AssetDatabase.Refresh();
@@ -294,16 +296,20 @@ public class BuildAssetBundle
                 if (importer && importer.assetBundleName != assetName)
                 {
                     importer.assetBundleName = name + "/" + assetName;
+                    importer.assetBundleVariant = "";
                     importer.assetBundleVariant = "bytes";
                 }
 
                 KeyValuesNode mKeyValuesNode = new KeyValuesNode();
                 mKeyValuesNode.mKey = assetName;
+                //mKeyValuesNode.mValues = name + "/" + assetName;
                 mKeyValuesNode.mValues = name + "/" + assetName + ".bytes";
                 mListKey.Add(mKeyValuesNode);
 
             }
         }
+
+
         mKeyValue.mKeyValuesInfo = mListKey;
         EditorUtility.ClearProgressBar();   //清除进度条
     }
