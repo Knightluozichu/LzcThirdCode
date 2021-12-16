@@ -1,4 +1,4 @@
 {
-    "remoteRes": "file:///D:/RemoteRes",
-    "remoteMD5file": "file:///D:/RemoteRes/ResourcesList_MD5.json"
+    "remoteRes": "http://1.15.10.74/Remote",
+    "remoteMD5file": "http://1.15.10.74/Remote/ResourcesList_MD5.json"
 }

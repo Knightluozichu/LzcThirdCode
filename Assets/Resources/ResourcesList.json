@@ -43,6 +43,14 @@
         {
             "mKey": "item",
             "mValues": "Data/item.bytes"
+        },
+        {
+            "mKey": "HotFix_Project.dll",
+            "mValues": "StartGame/HotFix_Project.dll.bytes"
+        },
+        {
+            "mKey": "HotFix_Project.pdb",
+            "mValues": "StartGame/HotFix_Project.pdb.bytes"
         }
     ]
 }

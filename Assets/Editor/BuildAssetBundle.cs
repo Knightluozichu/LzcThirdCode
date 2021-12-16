@@ -1,8 +1,64 @@
-﻿using RedRedJiang.Unity;
+﻿//using RedRedJiang.Unity;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Security.Cryptography;
 using UnityEditor;
 using UnityEngine;
+
+
+public static class ResourcesMD5
+{
+    /// <summary>
+    /// 获取文件MD5
+    /// </summary>
+    /// <param name="filePath"></param>
+    /// <returns></returns>
+    public static string GetFileHash(string filePath)
+    {
+        try
+        {
+            FileStream fs = new FileStream(filePath, FileMode.Open);
+            int len = (int)fs.Length;
+            byte[] data = new byte[len];
+            fs.Read(data, 0, len);
+            fs.Close();
+            MD5 md5 = new MD5CryptoServiceProvider();
+            byte[] result = md5.ComputeHash(data);
+            string fileMD5 = "";
+            foreach (byte b in result)
+            {
+                fileMD5 += Convert.ToString(b, 16);
+            }
+            return fileMD5;
+        }
+        catch (FileNotFoundException e)
+        {
+            Console.WriteLine(e.Message);
+            return "";
+        }
+    }
+
+    public static bool CompareHash(string bo1, string bo2)
+    {
+        return bo1.Equals(bo2);
+    }
+}
+
+#region Serializable
+[Serializable]
+public class KeyValuesInfo
+{
+    public List<KeyValuesNode> mKeyValuesInfo;
+}
+[Serializable]
+public class KeyValuesNode
+{
+    public string mKey;
+    public string mValues;
+}
+
+#endregion
 
 public class BuildAssetBundle
 {
@@ -23,6 +79,7 @@ public class BuildAssetBundle
     private const string mDataPathName = "Data";
     private const string mAudioPathName = "Audio";
     private const string mShaderPathName = "Shader";
+    private const string mStartGamePathName = "StartGame";
 
     private static KeyValuesInfo mKeyValue = new KeyValuesInfo();
     private static List<KeyValuesNode> mListKey = new List<KeyValuesNode>();
@@ -57,15 +114,16 @@ public class BuildAssetBundle
         SetAssetName(mDataPathName);
         SetAssetName(mAudioPathName);
         SetAssetName(mShaderPathName);
+        SetAssetName(mStartGamePathName);
         Init();
     }
 
-    [MenuItem("AssetBundle/Make MD5")]
+    [MenuItem("AssetBundle/Make MD5", false, 1)]
     private static void MakeMd5Async()
     {
         var jsonPath = Path.Combine(Application.streamingAssetsPath, mPathInfo_MD5 + ".json");
 
-        if(File.Exists(jsonPath))
+        if (File.Exists(jsonPath))
         {
             File.Delete(jsonPath);
             AssetDatabase.Refresh();
@@ -103,12 +161,12 @@ public class BuildAssetBundle
 
         string json = JsonUtility.ToJson(mKeyValue_MD5, true);
 
-        
+
         if (!File.Exists(jsonPath))
         {
             File.Create(jsonPath).Close();
         }
-        
+
         File.WriteAllText(jsonPath, json);
 
         AssetDatabase.Refresh();
@@ -238,16 +296,20 @@ public class BuildAssetBundle
                 if (importer && importer.assetBundleName != assetName)
                 {
                     importer.assetBundleName = name + "/" + assetName;
+                    importer.assetBundleVariant = "";
                     importer.assetBundleVariant = "bytes";
                 }
 
                 KeyValuesNode mKeyValuesNode = new KeyValuesNode();
                 mKeyValuesNode.mKey = assetName;
+                //mKeyValuesNode.mValues = name + "/" + assetName;
                 mKeyValuesNode.mValues = name + "/" + assetName + ".bytes";
                 mListKey.Add(mKeyValuesNode);
 
             }
         }
+
+
         mKeyValue.mKeyValuesInfo = mListKey;
         EditorUtility.ClearProgressBar();   //清除进度条
     }
