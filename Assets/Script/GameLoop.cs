@@ -22,7 +22,7 @@ namespace RedRedJiang.Unity
         private void Start()
         {
            
-            SceneStateController.Instance.SetState(new TheFrontLine_1(), false);
+            //SceneStateController.Instance.SetState(new TheFrontLine_1(), false);
             
         }
 
@@ -46,11 +46,11 @@ namespace RedRedJiang.Unity
 
         private void Update()
         {
-            if(SceneStateController.Instance != null)
-            {
-                SceneStateController.Instance.StateUpdate();
-            }
-
+            //if(SceneStateController.Instance != null)
+            //{
+            //    SceneStateController.Instance.StateUpdate();
+            //}
+            GameFacade.Instance.Update();
         }
 
          

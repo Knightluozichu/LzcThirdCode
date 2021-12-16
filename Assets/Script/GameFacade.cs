@@ -28,7 +28,7 @@ namespace RedRedJiang.Unity
         {
             mIsAwake = true;
             //ResourceVersionCheckSystem
-            mDic.Add(CommonClass.mResourceVersionCheckSystemName, ResourceVersionCheckSystem.Instance);
+            //mDic.Add(CommonClass.mResourceVersionCheckSystemName, ResourceVersionCheckSystem.Instance);
             mDic.Add(CommonClass.mSceneStateControllerName, SceneStateController.Instance);
             mDic.Add(CommonClass.mModelSystemName, ModelSystem.Instance);
             mDic.Add(CommonClass.mUISystemName, UISystem.Instance);
@@ -39,7 +39,7 @@ namespace RedRedJiang.Unity
             mDic.Add(CommonClass.mAudioSystemName, AudioSystem.Instance);
             mDic.Add(CommonClass.mUICtrlSystemName, UICtrlSystem.Instance);
 
-            ResourceVersionCheckSystem.Instance.Init();
+            //ResourceVersionCheckSystem.Instance.Init();
             ResourcesSystem.Instance.Init();
             UISystem.Instance.Init();
             AudioSystem.Instance.InitAwake();
@@ -47,6 +47,7 @@ namespace RedRedJiang.Unity
             
             GameMapSystem.Instance.GameInit();
             ModelSystem.Instance.ModelInit();
+            GameSystem.Instance.GameInit();
             
         }
 
@@ -60,6 +61,7 @@ namespace RedRedJiang.Unity
 
         public void End()
         {
+            GameSystem.Instance.GameEnd();
             ModelSystem.Instance.ModelEnd();
             AnimationSystem.Instance.AnimationEnd();
 
@@ -67,6 +69,7 @@ namespace RedRedJiang.Unity
 
         public void Update()
         {
+            GameSystem.Instance.GameUpdate();
             AnimationSystem.Instance.AnimationUpdate();
         }
 

@@ -28,7 +28,7 @@ namespace RedRedJiang.Unity
 
         public override void StateUpdate()
         {
-            GameFacade.Instance.Update();
+            //GameFacade.Instance.Update();
         }
         private void GameScene_2Scene(object message)
         {

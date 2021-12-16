@@ -76,5 +76,13 @@ namespace RedRedJiang.Unity
             }
             
         }
+
+        public void End()
+        {
+            mAsyOp = null;
+            mIScene.StateEnd();
+            mIScene = null;
+            isRunStart = false;
+        }
     }
 }

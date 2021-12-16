@@ -39,17 +39,17 @@ namespace RedRedJiang.Unity
 
         public void GameEnd()
         {
-
+            SceneStateController.Instance.End();
         }
 
         public void GameInit()
         {
-
+            SceneStateController.Instance.SetState(new TheFrontLine_1(), false);
         }
 
         public void GameUpdate()
         {
-
+            SceneStateController.Instance.StateUpdate();
         }
 
         /// <summary>
